@@ -13,6 +13,13 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+// Test prompts and confirms
+var stringLength = prompt("How long would you like your password to be? Please type a number between 8 and 28.")
+
+confirm("Do you want capital letters?");
+confirm("Do you want special characters?");
+confirm("Do you want numbers?");
+alert("Your password will be " + stringLength + " characters long")
 
 
 // Generator Functions 
