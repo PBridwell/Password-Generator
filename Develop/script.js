@@ -20,7 +20,6 @@ if (stringLength > 7 && stringLength < 129) {
     prompt("Please enter a number between 8 and 128");
 }
 
-//Variable Declarations
 
 
 
@@ -30,32 +29,43 @@ if (stringLength > 7 && stringLength < 129) {
 
 
 
-var randomizerFunc = [getLower(), getUpper(), getNumber(), getSymbol()]
+// Variables for password generation 
+var randomizerFunc = [getLower, getUpper, getNumber, getSymbol]
 const passwordCharacters = []
 var isTrue =[lower, upper, special, number]
+
 console.log(isTrue);
-
+// Checks which char types are true and generates password characters
 while (passwordCharacters.length < stringLength) {
-
-for (i = 0; i < isTrue.length; i ++) {
-  if (isTrue[i] === true) {
-    passwordCharacters.push(randomizerFunc[Math.floor(Math.random()) * stringLength]);
-
+  for (i = 0; i < isTrue.length; i++) {
+      if (isTrue[i] === true) {
+          passwordCharacters.push(randomizerFunc[i]());
+      }
+  }
 }
-}
-}
+// Converts password array into a string
+var deliverable = passwordCharacters.join('')
 console.log(passwordCharacters);
+
+console.log(deliverable);
 // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+function writePassword() {
+  var randomizerFunc = [getLower, getUpper, getNumber, getSymbol]
+  for (i = 0; i < isTrue.length; i++) {
+    if (isTrue[i] === true) {
+        passwordCharacters.push(randomizerFunc[i]());
+    }
+}
 
-//   passwordText.value = password;
+  var password = deliverable
+  var passwordText = document.querySelector("#password");
 
-// }
+  passwordText.value = password;
+
+}
 
 // // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+generate.addEventListener("click", writePassword);
 
 // Test prompts and confirms
 
