@@ -21,17 +21,30 @@ if (stringLength > 7 && stringLength < 129) {
 }
 
 //Variable Declarations
+
+
+
+
+
+
+
+
+
+var randomizerFunc = [getLower(), getUpper(), getNumber(), getSymbol()]
+const passwordCharacters = []
 var isTrue =[lower, upper, special, number]
 console.log(isTrue);
 
+while (passwordCharacters.length < stringLength) {
+
 for (i = 0; i < isTrue.length; i ++) {
   if (isTrue[i] === true) {
-    
-  }
+    passwordCharacters.push(randomizerFunc[Math.floor(Math.random()) * stringLength]);
+
 }
-
-
-
+}
+}
+console.log(passwordCharacters);
 // Write password to the #password input
 // function writePassword() {
 //   var password = generatePassword();
@@ -79,10 +92,3 @@ function getUpper() {
     const symbols = '!@$%^&*+-';
     return symbols[Math.floor(Math.random() * symbols.length)];
   }
- 
-
-
-
-for (i=0; i< stringLength; i ++) {
-  console.log(String(randomizerFunc))
-}
