@@ -1,28 +1,52 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+//var generateBtn = document.querySelector("#generate");
 
-  passwordText.value = password;
 
+// Initial prompts and confirms 
+
+var stringLength = parseFloat(prompt("How long would you like your password to be? Please type a number between 8 and 128."))
+
+console.log(stringLength);
+
+
+if (stringLength > 7 && stringLength < 129) {
+  alert("Your password will be " + stringLength + " characters long. Please click 'ok' on at least one of the following prompts");
+  var lower = confirm("Do you want lower case letters?");
+  var upper = confirm("Do you want capital letters?");
+  var special = confirm("Do you want special characters?");
+  var number = confirm("Do you want numbers?");
+}
+  else {
+    prompt("Please enter a number between 8 and 128");
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+//Variable Declarations
+var isTrue =[lower, upper, special, number]
+console.log(isTrue);
+
+for (i = 0; i < isTrue.length; i ++) {
+  if (isTrue[i] === true) {
+    
+  }
+}
+
+
+
+// Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
+
+//   passwordText.value = password;
+
+// }
+
+// // Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
 
 // Test prompts and confirms
-var stringLength = prompt("How long would you like your password to be? Please type a number between 8 and 28.")
-var lowers = confirm("Do you want lower case letters?")
-var uppers = confirm("Do you want capital letters?");
-var specials = confirm("Do you want special characters?");
-var numbers = confirm("Do you want numbers?");
-alert("Your password will be " + stringLength + " characters long")
-var typesCheckedArr = [lowers, uppers, specials, numbers]
 
-var generatedPass = ''
+
 
 
 
@@ -31,12 +55,10 @@ var generatedPass = ''
 
 // Generator Functions 
  
-var randomizerFunc = {
-  lower: getLower(),
-  upper: getUpper(),
-  number: getNumber(),
-  symbol: getSymbol(),
-}
+var randomizerFunc = [getLower(), getUpper(), getNumber(), getSymbol()]
+
+
+console.log(String(randomizerFunc))
 
 
 
@@ -59,8 +81,8 @@ function getUpper() {
   }
  
 
-console.log(randomizerFunc.lower)
+
 
 for (i=0; i< stringLength; i ++) {
-  console.log(randomizerFunc);
+  console.log(String(randomizerFunc))
 }
