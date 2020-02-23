@@ -1,5 +1,5 @@
 
-//var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate");
 
 
 // Initial prompts and confirms 
@@ -65,7 +65,7 @@ function writePassword() {
 }
 
 // // Add event listener to generate button
-generate.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
 
 // Test prompts and confirms
 
